@@ -24,7 +24,7 @@ app.post("/generate-pdf", async (req, res) => {
 
     await page.setContent(html);
 
-    const pdf = await page.pdf({ format: "A4" });
+    const pdf = await page.pdf({ format: "A4", printBackground: true });
 
     await browser.close();
 
