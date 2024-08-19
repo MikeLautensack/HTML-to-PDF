@@ -31,9 +31,9 @@ app.post("/generate-pdf", async (req, res) => {
     res.contentType("application/pdf");
     res.setHeader("Content-Length", pdf.length);
     res.end(pdf, "binary");
-  } catch (error) {
-    console.log("Error generating PDF:", error);
-    res.status(500).json({ error: "Failed to generate PDF" });
+  } catch (error: any) {
+    console.log("Error generating PDF:", error.message);
+    res.status(500).json({ error: "Failed to generate PDF", message: error });
   }
 });
 
