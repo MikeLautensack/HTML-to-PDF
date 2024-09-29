@@ -38,10 +38,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "DinkToPdf": {
-              "target": "Package",
-              "version": "[1.0.8, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -53,14 +49,6 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
-            },
-            "itext7": {
-              "target": "Package",
-              "version": "[8.0.5, )"
-            },
-            "puppeteerSharp": {
-              "target": "Package",
-              "version": "[20.0.2, )"
             }
           },
           "imports": [

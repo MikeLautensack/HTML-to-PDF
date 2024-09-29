@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HTML-to-PDF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e89ca4756d51f7cb1ddcd1f064073651efbfd445")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d72dc49f9a8444c4a7fd0e1ed249a9d985c9edac")]
 [assembly: System.Reflection.AssemblyProductAttribute("HTML-to-PDF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HTML-to-PDF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
