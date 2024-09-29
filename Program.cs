@@ -48,28 +48,26 @@ app.MapPost("/convert-to-pdf", async (HttpRequest request, HttpContext context) 
     }
 
     // Use Playwright to convert HTML to PDF
-    using var playwright = await Playwright.CreateAsync();
-    var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+    try
     {
-        Headless = true
-    });
+        using var playwright = await Playwright.CreateAsync();
+        var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = true });
 
-    var page = await browser.NewPageAsync();
-    await page.SetContentAsync(htmlContent);
+        var page = await browser.NewPageAsync();
+        await page.SetContentAsync(htmlContent);
 
-    var pdfBytes = await page.PdfAsync(new PagePdfOptions
+        var pdfBytes = await page.PdfAsync(new PagePdfOptions { Format = "A4" });
+        await browser.CloseAsync();
+
+        context.Response.ContentType = "application/pdf";
+        context.Response.Headers.Append("Content-Disposition", "attachment; filename=document.pdf");
+        await context.Response.Body.WriteAsync(pdfBytes);
+    }
+    catch (Exception ex)
     {
-        Format = "A4"
-    });
-
-    await browser.CloseAsync();
-
-    // Set response headers for PDF download
-    context.Response.ContentType = "application/pdf";
-    context.Response.Headers.Append("Content-Disposition", "attachment; filename=document.pdf");
-
-    // Return PDF content
-    await context.Response.Body.WriteAsync(pdfBytes);
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        await context.Response.WriteAsync($"Internal Server Error: {ex.Message}");
+    }
 })
 .WithName("ConvertToPdf")
 .Accepts<string>("text/html")
