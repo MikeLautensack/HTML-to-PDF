@@ -3,26 +3,22 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Playwright;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to enable Swagger/OpenAPI documentation
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "HTML to PDF API",
-        Version = "v1",
-        Description = "An API that converts HTML content to PDF using PuppeteerSharp",
-    });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "HTML to PDF API", Version = "v1", Description = "An API that converts HTML content to PDF using PuppeteerSharp" });
 });
 
 var app = builder.Build();
 
-// Use Swagger in development or production
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
@@ -32,35 +28,27 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     });
 }
 
-app.MapGet("/test", (HttpRequest request, HttpResponse response) =>
+app.MapGet("/", (HttpRequest request, HttpResponse response) =>
 {
-    return "testing";
-}).WithName("Test");
+    return "Welcome to HTML to PDF converter!";
+}).WithName("Welcome");
 
-// Minimal API Endpoint to convert HTML to PDF
-app.MapPost("/convert-to-pdf", async (HttpRequest request, HttpContext context) =>
+app.MapPost("/convert-to-pdf", async (ConvertToPdfRequest request, HttpContext context) =>
 {
-    // Read HTML content directly from the request body
-    string htmlContent;
-    using (var reader = new StreamReader(context.Request.Body))
-    {
-        htmlContent = await reader.ReadToEndAsync();
-    }
+    string htmlContent = request.htmlContent;
+    string fileName = string.IsNullOrWhiteSpace(request.fileName) ? "document.pdf" : request.fileName;
 
-    // Use Playwright to convert HTML to PDF
     try
     {
         using var playwright = await Playwright.CreateAsync();
         var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = true });
-
         var page = await browser.NewPageAsync();
         await page.SetContentAsync(htmlContent);
-
         var pdfBytes = await page.PdfAsync(new PagePdfOptions { Format = "A4" });
         await browser.CloseAsync();
 
         context.Response.ContentType = "application/pdf";
-        context.Response.Headers.Append("Content-Disposition", "attachment; filename=document.pdf");
+        context.Response.Headers.Append("Content-Disposition", $"attachment; filename={fileName}");
         await context.Response.Body.WriteAsync(pdfBytes);
     }
     catch (Exception ex)
@@ -70,26 +58,27 @@ app.MapPost("/convert-to-pdf", async (HttpRequest request, HttpContext context) 
     }
 })
 .WithName("ConvertToPdf")
-.Accepts<string>("text/html")
+.Accepts<ConvertToPdfRequest>("application/json")
 .Produces<FileContentResult>(StatusCodes.Status200OK)
 .Produces(StatusCodes.Status400BadRequest)
 .WithOpenApi(operation => new OpenApiOperation(operation)
 {
     RequestBody = new OpenApiRequestBody
     {
-        Content =
-        {
-            ["text/html"] = new OpenApiMediaType
-            {
-                Schema = new OpenApiSchema
-                {
-                    Type = "string",
-                    Format = "html"
+        Content = {
+            ["application/json"] = new OpenApiMediaType {
+                Schema = new OpenApiSchema {
+                    Type = "object",
+                    Properties = {
+                        ["htmlContent"] = new OpenApiSchema { Type = "string", Description = "The HTML content to be converted to PDF" },
+                        ["fileName"] = new OpenApiSchema { Type = "string", Description = "The desired filename for the PDF" }
+                    },
+                    Required = new HashSet<string> { "htmlContent", "fileName" }
                 }
             }
         },
         Required = true,
-        Description = "The HTML content to be converted to PDF"
+        Description = "The HTML content and desired filename for the PDF"
     }
 });
 
