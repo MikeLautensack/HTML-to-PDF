@@ -361,3 +361,16 @@ C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\.playwright\package\types\type
 C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\playwright.ps1
 C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Playwright.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\CodeProjects\Apps\HTML-to-PDF\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

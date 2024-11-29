@@ -1,12 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "XoDxPA6sDVz7yXK2vre85pb8f3A2O0Whrsuc1VysQIiCQ1CdHvLwL0ijg9Ky+T1LCGCKBjPortxCcrob6Dc43w==",
+  "dgSpecHash": "/evYwpnRvzvcDm/Z0FYRpEe45BgamA/3olGZ2ky7RPEX4MfFEHNGAt2ev2ue4j66wn9buM4XEdnfVaJ9K4B8Pw==",
   "success": true,
   "projectFilePath": "C:\\CodeProjects\\Apps\\HTML-to-PDF\\HTML-to-PDF.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.11\\microsoft.aspnetcore.authorization.8.0.11.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.11\\microsoft.aspnetcore.components.8.0.11.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.11\\microsoft.aspnetcore.components.analyzers.8.0.11.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\8.0.11\\microsoft.aspnetcore.components.forms.8.0.11.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.11\\microsoft.aspnetcore.components.web.8.0.11.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.11\\microsoft.aspnetcore.metadata.8.0.11.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0\\microsoft.extensions.logging.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.jsinterop\\8.0.11\\microsoft.jsinterop.8.0.11.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.playwright\\1.47.0\\microsoft.playwright.1.47.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\swashbuckle.aspnetcore\\6.8.0\\swashbuckle.aspnetcore.6.8.0.nupkg.sha512",
@@ -14,9 +27,12 @@
     "C:\\Users\\Mike\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.8.0\\swashbuckle.aspnetcore.swaggergen.6.8.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.8.0\\swashbuckle.aspnetcore.swaggerui.6.8.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\Mike\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+    "C:\\Users\\Mike\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.1\\microsoft.netcore.app.host.linux-x64.8.0.1.nupkg.sha512"
   ],
   "logs": []
 }

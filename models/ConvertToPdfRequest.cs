@@ -1,6 +1,8 @@
 // Define the model class for the request
+
+namespace HTML_to_PDF.Models;
 public class ConvertToPdfRequest
 {
-    public string htmlContent { get; set; }
-    public string fileName { get; set; }
+    public required string HtmlContent { get; set; }
+    public required string FileName { get; set; }
 };

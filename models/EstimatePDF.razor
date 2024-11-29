@@ -1,0 +1,86 @@
+@using HTML_to_PDF.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Estimate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .estimate-details {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>@Estimate.EstimateName</h1>
+    </div>
+
+    <div class="estimate-details">
+        <p>Contractor: @Estimate.EstimateName</p>
+        <p>Project Address: @Estimate.ProjectAddress</p>
+        <p>Customer: @Estimate.CustomerFirstName @Estimate.CustomerLastName</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example row, replace with dynamic content -->
+            @foreach (var lineItem in Estimate.LineItems)
+        {
+            <tr>
+                <td>@lineItem.Item</td>
+                <td>@lineItem.Description</td>
+                <td>@lineItem.Quantity</td>
+                <td>@lineItem.Price.ToString("C")</td>
+                <td>@lineItem.Amount.ToString("C")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <div class="estimate-details">
+        <p>Subtotal: @Estimate.Subtotal</p>
+        <p>Tax: @Estimate.Tax</p>
+        <p>Total: @Estimate.Total</p>
+    </div>
+</body>
+</html>
+
+
+@code {
+    [Parameter] public Estimate Estimate { get; set; }
+}
